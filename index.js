@@ -13,6 +13,10 @@ const {
     ErrorHandler
 } = require('./lib/handlers')
 
+const {
+  LocalizationInterceptor
+} = require('./lib/interceptors')
+
 exports.handler = Alexa.SkillBuilders.custom()
   .addRequestHandlers(
     HelloWorldIntentHandler,
@@ -24,4 +28,5 @@ exports.handler = Alexa.SkillBuilders.custom()
     SessionEndedHandler,
     ErrorHandler)
   .addErrorHandlers(ErrorHandler)
+  .addRequestInterceptors(LocalizationInterceptor)
   .lambda();
