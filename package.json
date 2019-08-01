@@ -4,14 +4,17 @@
   "description": "alexa utility for quickly building skills",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha ./test/*.js --reporter spec"
   },
   "author": "Marian C. Moldovan",
   "license": "MIT",
   "dependencies": {
-    "ask-sdk-core": "^2.6.0",
-    "ask-sdk-model": "^1.18.0",
+    "ask-sdk": "^2.6.0",
     "i18next": "^17.0.7",
     "i18next-sprintf-postprocessor": "^0.2.2"
+  },
+  "devDependencies": {
+    "lambda-local": "^1.6.3",
+    "mocha": "^6.2.0"
   }
 }
