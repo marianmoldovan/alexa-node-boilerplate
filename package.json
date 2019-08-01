@@ -4,7 +4,8 @@
   "description": "alexa utility for quickly building skills",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./test/*.js --reporter spec"
+    "test": "mocha ./test/*.js --reporter spec",
+    "deploy": "bash deploy.sh"
   },
   "author": "Marian C. Moldovan",
   "license": "MIT",
