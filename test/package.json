@@ -1,0 +1,15 @@
+{
+  "name": "alexa-skill-boilerplate-test",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {
+    "ask-sdk": "^2.6.0",
+    "chai": "^4.2.0",
+    "clear-require": "^3.0.0",
+    "lambda-local": "^1.6.3"
+  }
+}
