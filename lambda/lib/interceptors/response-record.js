@@ -1,5 +1,6 @@
 const ResponseRecordSpeechOutputInterceptor = {
     process(handlerInput, responseOutput) {
+      if(responseOutput && responseOutput.outputSpeech && responseOutput.outputSpeech.ssml){
         let sessionAttributes = handlerInput.attributesManager.getSessionAttributes()
         let lastSpeechOutput = {
             "outputSpeech": responseOutput.outputSpeech.ssml
@@ -8,6 +9,7 @@ const ResponseRecordSpeechOutputInterceptor = {
           lastSpeechOutput.reprompt = responseOutput.reprompt.outputSpeech.ssml
         sessionAttributes['lastSpeechOutput'] = lastSpeechOutput
         handlerInput.attributesManager.setSessionAttributes(sessionAttributes)
+      }
     }
 }
 

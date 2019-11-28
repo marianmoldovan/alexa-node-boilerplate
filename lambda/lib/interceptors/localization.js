@@ -2,14 +2,14 @@ const i18n = require('i18next')
 const sprintf = require('i18next-sprintf-postprocessor')
 
 const languageStrings = {
-  'en': require('../../i18n/en')
+  'es-ES': require('../../i18n/es')
 }
 
 const LocalizationInterceptor = {
     process(handlerInput) {
         const localizationClient = i18n.use(sprintf).init({
             lng: handlerInput.requestEnvelope.request.locale,
-            fallbackLng: 'en', // fallback to EN if locale doesn't exist
+            fallbackLng: 'es-ES',
             resources: languageStrings
         })
         localizationClient.localize = function () {

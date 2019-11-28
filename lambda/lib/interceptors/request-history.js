@@ -29,6 +29,7 @@ const RequestHistoryInterceptor = {
             history.shift()
         }
         history.push(IntentRequest)
+        sessionAttributes['history'] = history
         handlerInput.attributesManager.setSessionAttributes(sessionAttributes)
     }
 }

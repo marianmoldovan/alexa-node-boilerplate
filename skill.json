@@ -1,0 +1,18 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:319330190267:function:5230dab6-1c45-4682-a2fb-ffef8a86b33d:Release_0"
+        }
+      }
+    },
+    "publishingInformation": {
+      "locales": {
+        "es-ES": {
+          "name": "Hello World"
+        }
+      }
+    }
+  }
+}

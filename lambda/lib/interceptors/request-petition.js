@@ -3,7 +3,7 @@ const RequestPetitionInterceptor = {
         const thisRequest = handlerInput.requestEnvelope.request;
         const thisSession = handlerInput.requestEnvelope.session;
         if (thisSession['new']) {
-            console.log("[RequestPetitionInterceptor] Sesión nueva")
+            //console.log("[RequestPetitionInterceptor] Sesión nueva")
             let sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
             if (!sessionAttributes.launched_via){
                 let strIntent = thisRequest.type;
@@ -15,7 +15,7 @@ const RequestPetitionInterceptor = {
             }
         }
         else {
-            console.log("[RequestPetitionInterceptor] Sesión antigua")
+            //console.log("[RequestPetitionInterceptor] Sesión antigua")
         }
     }
 }

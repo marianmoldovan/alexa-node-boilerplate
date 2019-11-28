@@ -1,15 +1,13 @@
-
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
       const request = handlerInput.requestEnvelope.request;
       return request.type === 'LaunchRequest';
     },
     handle(handlerInput) {
-      let response = handlerInput.responseBuilder
-      const speechText = 'Launch'
-      return response
-        .speak(speechText)
-        .reprompt(speechText)
+      let speech = 'Launch'
+      return handlerInput.responseBuilder
+        .speak(speech)
+        .reprompt(speech)
         .getResponse()
     }
 }
@@ -21,6 +19,9 @@ const SessionEndedHandler = {
       return request.type === 'SessionEndedRequest';
     },
     handle(handlerInput) {
+      if(handlerInput.requestEnvelope.request.error) {
+        console.log(JSON.stringify(handlerInput.requestEnvelope.request.error));
+      }
       let userID = handlerInput.requestEnvelope.session.user.userId;
       console.log("[SessionEnded] userID: " + userID);
       console.log(`Session ended with reason: ${handlerInput.requestEnvelope.request.reason}`);
@@ -30,16 +31,20 @@ const SessionEndedHandler = {
 };
 
 const ErrorHandler = {
-    canHandle(handlerInput) {
+    canHandle() {
       return true
     },
     handle(handlerInput, error) {
-      let response = handlerInput.responseBuilder
+      if(handlerInput.requestEnvelope.request && handlerInput.requestEnvelope.request.error) {
+        console.log(JSON.stringify(handlerInput.requestEnvelope.request.error));
+      }
+      console.log("[Error] request: " + JSON.stringify(handlerInput.requestEnvelope.request));
+      console.log(`Error handled: ${error.message}`);
       const speechText = 'Error'
       return handlerInput.responseBuilder
         .speak(speechText)
         .reprompt(speechText)
-        .withShouldEndSession(true)
+        .withShouldEndSession(false)
         .getResponse()
     }
 };

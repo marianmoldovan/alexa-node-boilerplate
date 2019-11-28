@@ -5,6 +5,7 @@ const RequestPetitionInterceptor = require('./interceptors/request-petition')
 const ResponseRecordSpeechOutputInterceptor = require('./interceptors/response-record')
 const RequestPersistenceInterceptor = require('./interceptors/request-persistence')
 const ResponsePersistenceInterceptor = require('./interceptors/response-persistence')
+const {LogRequestInterceptor, LogResponseInterceptor} = require('./interceptors/logger')
 
 module.exports = {
   LocalizationInterceptor,
@@ -13,5 +14,7 @@ module.exports = {
   RequestPetitionInterceptor,
   ResponseRecordSpeechOutputInterceptor,
   RequestHistoryInterceptor,
-  ResponsePersistenceInterceptor
+  ResponsePersistenceInterceptor,
+  LogRequestInterceptor,
+  LogResponseInterceptor
 }
